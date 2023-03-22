@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+}
+a{
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    transition:all 1s;
+    color: rgba(5, 122, 255, 0.9);
+
+}
+a:hover{
+    font-size: 19px;
+    color: brown;
+}
