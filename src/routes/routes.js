@@ -1,8 +1,8 @@
 import React from "react";
 import { Route,BrowserRouter, Routes as ReactRouterRoutes } from "react-router-dom";
 import Navs from "../Navs";
-import AirQuality from "../components/astronomy-information";
-import Forecast from "../components/forecast-page";
+import AirQuality from "../components/astronomy/astronomy-information";
+import Forecast from "../components/Forecast/forecast-page";
 
 const Routes = () => {
     return(
