@@ -3,7 +3,7 @@ import axios from "axios";
 // import RenderAfterTomorrowCard from "../../weather-card/after-tommorow-weather-card";
 // import RenderTodayCard from "../../weather-card/today-weather-card";
 // import RenderTomorrowCard from "../../weather-card/tommorow-weather-card";
-import RenderCard,{getForecast} from "../../render-card/render-weather-card";
+import RenderCard,{getForecast} from "../../weather-card/render-weather-card";
 import "./forecast.css"
 
 

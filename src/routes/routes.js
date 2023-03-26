@@ -1,5 +1,5 @@
 import React from "react";
-import { Route,BrowserRouter, Routes as ReactRouterRoutes } from "react-router-dom";
+import { Route,HashRouter, Routes as ReactRouterRoutes } from "react-router-dom";
 import Navs from "../Navs";
 import AirQuality from "../components/astronomy/astronomy-information";
 import Forecast from "../components/Forecast/forecast-page";
@@ -7,7 +7,7 @@ import Forecast from "../components/Forecast/forecast-page";
 const Routes = () => {
     return(
         <div>
-            <BrowserRouter>
+            <HashRouter>
             <div>
                 <header>
                     <Navs/>
@@ -19,7 +19,7 @@ const Routes = () => {
                     </ReactRouterRoutes>
                 </div>
             </div>
-            </BrowserRouter>
+            </HashRouter>
         </div>
     )
 }
