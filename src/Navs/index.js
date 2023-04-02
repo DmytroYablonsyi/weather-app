@@ -7,7 +7,7 @@ const Navs = () => {
         <>
         <header className="header">
             <Link to="/">Forecast</Link>
-            <Link to="/Air Quality">Astronomy</Link>
+            <Link to="/Astronomy">Astronomy</Link>
         </header>
         </>
     )

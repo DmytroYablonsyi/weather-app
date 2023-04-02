@@ -1,10 +1,9 @@
-.weather-card{
+.weather-cards{
     background-color:rgba(254, 253, 253, 0.2);
     border-radius: 40px;
-    width: fit-content;
     display:flex;
-    flex-direction:column;
-    margin:20px 10px;
+    width: 90%;
+    margin:2% auto;
     padding: 20px;
     color:white;
     font-weight:300;
@@ -20,8 +19,8 @@
     margin:0;
 }
 .navPoint{
-    width:15%;
-    height:50%;
+    width:10%;
+    height:30%;
     margin-right:10px;
 }
 .condition{
@@ -32,4 +31,7 @@
     font-weight:300;
     font-size:20px;
     text-shadow: 2px 2px black;
+}
+.defaultCard{
+    
 }

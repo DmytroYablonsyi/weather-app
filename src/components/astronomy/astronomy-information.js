@@ -1,33 +1,39 @@
 import axios from "axios";
-import React, { useCallback } from "react";
+import React, { useState } from "react";
 import "./astronomy.css"
-
-const AirQuality = () => {
-    const getAirQuality = useCallback(() => {
-
-        const options = {
-            method: 'GET',
-            url: 'https://weatherapi-com.p.rapidapi.com/astronomy.json',
-            params: {q: 'London'},
-            headers: {
-              'X-RapidAPI-Key': 'fdbd7e888emsh0f689d046ac2f4ap192a47jsnc8145614a1e7',
-              'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-            }
-          };
-          
-          axios.request(options).then(function (response) {
-              console.log(response.data);
-          }).catch(function (error) {
-              console.error(error);
-          });
-    })
+import RenderAstroCard from "../../astro-card/index"
+const Astronomy = () => {
+    const [name, setName] = useState("");
+    const [active, setActive] = useState(false);
+    const [forecastData, setForecastData] = useState([]);
+        const getInfo = () => {
+            setActive(true);
+            async function getAstroForecast () {
+               const request = await axios.get('https://weatherapi-com.p.rapidapi.com/forecast.json',
+               {params: {q: "Lviv", days: '3'},
+               headers: {
+                 'X-RapidAPI-Key': process.env.REACT_APP_FORECAST_API_KEY,
+                 'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+               }});
+           console.log(request.data.forecast.forecastday)
+           setForecastData(request.data.forecast.forecastday)
+           } 
+           getAstroForecast()
+       }
+       const clearInfo = () => {
+        setName("")
+        setActive(false);
+        setForecastData([])
+}
     return(
-        <div className="container">
+        <>
         <p>astronomy</p>
-        <button onClick={getAirQuality}>GET</button>
-        <div>{}</div>
-        </div>
+        <button onClick={active ? clearInfo : getInfo}>{active ? "Clear" : "Get info"}</button>
+        <div className="container">{ forecastData.length > 0 && forecastData.map((data) => {
+                    return active && <RenderAstroCard data={data} city={name}/>
+                })}</div>
+        </>
     )
 }
 
-export default AirQuality
+export default Astronomy
