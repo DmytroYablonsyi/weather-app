@@ -37,7 +37,7 @@ const Forecast = () => {
     return(
     <div>
         <div className="form">
-            <input className="input" value={name} onChange={handleName} ></input>
+            <input className="input" value={name} onChange={handleName} placeholder={"search"}></input>
             <button onClick={active ? clearInfo : getInfo}>{active ? "Clear" : "Get info"}</button>
         </div>
         <div className="defaultForecast">
