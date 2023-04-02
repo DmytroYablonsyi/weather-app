@@ -42,7 +42,7 @@ const Forecast = () => {
         </div>
         <div className="defaultForecast">
                 {!active && <RenderDefaultCard/>}
-        </div>
+        </div> 
         <div className="forecast">
             {
                forecastData.length > 0 && forecastData.map((data) => {
@@ -50,7 +50,6 @@ const Forecast = () => {
                 })
             }
         </div>
-       
     </div>
     )
 }

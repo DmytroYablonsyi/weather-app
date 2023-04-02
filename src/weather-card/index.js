@@ -5,10 +5,6 @@ import React, {useState, useEffect} from 'react'
 const RenderCard = (props) => {
     const {date, day} = props.data
 
-
-   console.log(props)
-
-    console.log(process.env.REACT_APP_FORECAST_API_KEY)
     return(
       <div className="weather-card">
           <h1> <img className="navPoint" src={"https://cdn-icons-png.flaticon.com/512/447/447031.png"}/>{props.city}</h1>

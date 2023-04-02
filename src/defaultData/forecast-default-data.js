@@ -5,8 +5,8 @@ import axios from "axios";
 const RenderDefaultCard = () => {
 
     const [forecastData, setForecastData] = useState([]);
-
-      async function getForecast () {
+useEffect(() => {
+   async function getForecast () {
          const request = await axios.get('https://weatherapi-com.p.rapidapi.com/forecast.json',
          {params: {q: "Lviv", days: '3'},
          headers: {
@@ -14,11 +14,11 @@ const RenderDefaultCard = () => {
            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
          }});
          setForecastData(request.data.forecast.forecastday)
-         console.log(request.data.forecast.forecastday)
      } 
      getForecast()
  
-
+},[])
+     
     return(
       <div>{forecastData.length > 0 && forecastData.map((data) => {
                  return   <div className="weather-cards">

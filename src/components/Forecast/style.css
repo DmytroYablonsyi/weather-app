@@ -1,12 +1,10 @@
 .forecast{
     display: flex;
-    justify-content: space-between;
-    gap:15%;
+    gap:5%;
     margin:auto;
     padding:0 5%;
 }
 .defaultForecast{
-    width:70%;
     margin:auto;
     padding:0 5%;
 }
